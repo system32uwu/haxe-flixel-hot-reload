@@ -1,0 +1,22 @@
+{
+  "name": "helllo-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "source/Main.hx",
+  "scripts": {
+    "build:html5": "watchman-make -p \"source/**/*.hx\" \"assets/**/*.*\" -r \"lime build html5 -debug --connect 3001\"",
+    "serve:html5": "cd export/html5/bin && live-server --watch=HelloWorld.js.map --port=3000 --wait=500",
+    "dev": "concurrently \"pnpm haxe-server\" \"pnpm build:html5\" \"pnpm serve:html5\"",
+    "concurrently": "concurrently",
+    "live-server": "live-server",
+    "wait-on": "wait-on",
+    "haxe-server": "haxe -v --wait 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.1.0",
+    "live-server": "^1.2.2"
+  }
+}
